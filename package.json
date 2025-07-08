@@ -2,9 +2,9 @@
   "name": "cafebackend",
   "type": "module",
   "version": "1.0.0",
-  "main": "cafebackend/server.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node cafebackend/server.js"
+    "start": "server.js"
   },
   "keywords": [],
   "author": "",
