@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "cafebackend/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "^/cafebackend/(.*)",
+      "dest": "cafebackend/server.js"
+    }
+  ]
+}
