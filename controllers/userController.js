@@ -37,7 +37,9 @@ const showUsers = async (req, res) => {
   try {
     const result = await userModel.find();
     res.status(200).json(result);
-  } catch (err) {}
+  } catch (err) {
+    res.status(400).json({ message: "Something went wrong" });
+  }
 };
 
 const login = async (req, res) => {
@@ -81,5 +83,21 @@ const register = async (req, res) => {
     res.status(500).json({ message: "Something went wrong" });
   }
 };
+const updateProfile= async (req,res) =>{
 
-export { register,login,showUsers,deleteUser,updateUser,profile };
+try{
+    const id = req.params.id;
+  const { firstname, lastname , email} = req.body;
+  const userObj ={
+    firstName,
+    lastName,
+    email,
+  }
+  const result = await userModel.findByIdAndUpdate(id,userObj);
+
+}
+catch(err){
+  res.status(400).json({message: "Something went wrong"});
+}
+}
+export { register,login,showUsers,deleteUser,updateUser,profile }
